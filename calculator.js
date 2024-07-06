@@ -68,4 +68,28 @@ function clickDigit(val) {
     updateDisplay()
 }
 
+function clickOperator(operation) {
+    if (!operator) {
+       operator = operation;
+       secondVal = [];
+       displayVal = 0;
+    }
+    /*else if (operation === '=') {
+        if (operator) {
+            const first = parseInt(firstVal.join(''));
+            const second = parseInt(secondVal.join(''));
+            displayVal = operate(first, second, operator);
+        }
+    }*/
+    else {
+        const first = parseInt(firstVal.join(''));
+        const second = parseInt(secondVal.join(''));
+        displayVal = operate(first, second, operator);
+        operator = operation !== '='? operation : operator;
+        firstVal = (displayVal + '').split('');
+        secondVal = operation !== '=' ? [] : secondVal;
+    }
+    updateDisplay();
+}
+
 clearDisplay();
