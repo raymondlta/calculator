@@ -13,7 +13,33 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="container"></div>        
+        <div class="calculator">
+            <div class="display">0</div>
+            <div class="operations">
+                <button class="clear" onclick="clearDisplay()">AC</button>
+                <button class="add">+</button>
+                <button class="subtract">-</button>
+                <button class="multiply">X</button>
+                <button class="divide">/</button>
+            </div>
+            <div class="digits">
+                <div class="digitsRowOne">
+                    <button class="one" onClick="clickDigit(1)">1</button>
+                    <button class="two" onClick="clickDigit(2)">2</button>
+                    <button class="three" onClick="clickDigit(3)">3</button>
+                </div>
+                <div class="digitsRowTwo">
+                    <button class="four" onClick="clickDigit(4)">4</button>
+                    <button class="five" onClick="clickDigit(5)">5</button>
+                    <button class="six" onClick="clickDigit(6)">6</button>
+                </div>
+                <div class="digitsRowThree">
+                    <button class="seven" onClick="clickDigit(7)">7</button>
+                    <button class="eight" onClick="clickDigit(8)">8</button>
+                    <button class="nine" onClick="clickDigit(9)">9</button>
+                </div>
+            </div>
+        </div>        
         <script src="calculator.js" async defer></script>
     </body>
 </html>
