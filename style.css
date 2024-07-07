@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
+body {
+    background-color: black;
+}
+
 .calculator {
     background-color: rgb(77, 77, 77);
     height: 90vh;
