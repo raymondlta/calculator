@@ -21,7 +21,7 @@
                 <button class="subtract" onclick="clickOperator('-')">-</button>
                 <button class="multiply" onclick="clickOperator('*')">X</button>
                 <button class="divide" onclick="clickOperator('/')">/</button>
-                <button class="equal" onclick="clickOperator('=')">=</button>
+                <button class="equal" onclick="clickEquals()">=</button>
             </div>
             <div class="digits">
                 <div class="digitsRowOne">
@@ -38,6 +38,10 @@
                     <button class="seven" onclick="clickDigit(7)">7</button>
                     <button class="eight" onclick="clickDigit(8)">8</button>
                     <button class="nine" onclick="clickDigit(9)">9</button>
+                </div>
+                <div class="digitsRowFour">
+                    <button class="zero" onclick="clickDigit(0)">0</button>
+                    <button class="decimal" onclick="clickDecimal()">.</button>
                 </div>
             </div>
         </div>        

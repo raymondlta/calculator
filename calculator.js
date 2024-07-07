@@ -58,38 +58,87 @@ function clearDisplay() {
 
 function clickDigit(val) {
     if (!operator) {
-        firstVal.push(val);
-        displayVal = firstVal.join('');
+        if (val !== 0 || (val === 0 && firstVal.length > 0)) {
+            firstVal.push(val);
+            displayVal = firstVal.join('');
+        }
     }
     else {
-        secondVal.push(val);
-        displayVal = secondVal.join('');
+        if (val !== 0 || (val === 0 && secondVal.length > 0)) {
+            secondVal.push(val);
+            displayVal = secondVal.join('');
+        }
     }
     updateDisplay()
 }
 
+function clickDecimal() {
+    if (operator) {
+        if (secondVal.length > 0 && secondVal.indexOf('.') === -1) {
+            secondVal.push('.');
+            displayVal = secondVal.join('');
+        }
+        else if (secondVal.length === 0 && secondVal.indexOf('.') === -1) {
+            secondVal.push('0', '.');
+            displayVal = secondVal.join('');
+        }
+    } else {
+        if (firstVal.length > 0 && firstVal.indexOf('.') === -1) {
+            firstVal.push('.')
+            displayVal = firstVal.join('');
+        }
+        else if (firstVal.length === 0 && firstVal.indexOf('.') === -1) {
+            firstVal.push('0', '.');
+            displayVal = firstVal.join('');
+        }
+    }
+    updateDisplay();
+}
+
+function performOperation() {
+    const first = parseFloat(firstVal.join(''));
+    const second = parseFloat(secondVal.join(''));
+    displayVal = operate(first, second, operator);
+    firstVal = (displayVal + '').split('');
+    secondVal = [];
+}
+
 function clickOperator(operation) {
-    if (!operator) {
+    if (!operator && firstVal.length > 0) {
        operator = operation;
        secondVal = [];
        displayVal = 0;
     }
-    /*else if (operation === '=') {
-        if (operator) {
-            const first = parseInt(firstVal.join(''));
-            const second = parseInt(secondVal.join(''));
-            displayVal = operate(first, second, operator);
-        }
-    }*/
-    else {
-        const first = parseInt(firstVal.join(''));
-        const second = parseInt(secondVal.join(''));
-        displayVal = operate(first, second, operator);
-        operator = operation !== '='? operation : operator;
-        firstVal = (displayVal + '').split('');
-        secondVal = operation !== '=' ? [] : secondVal;
+    else if (operator && secondVal.length > 0) {
+        performOperation();
+        operator = operation;
+    }
+    else if (operator && secondVal.length === 0) {
+        operator = operation;
+    }
+    updateDisplay();
+}
+
+function clickEquals() {
+    if (operator && secondVal.length > 0) {
+        performOperation();
     }
     updateDisplay();
 }
 
 clearDisplay();
+
+document.addEventListener('keydown', function (e) {
+    if (/[0-9]/i.test(e.key)) {
+        clickDigit(e.key);
+    }
+    else if (e.key === '.') {
+        clickDecimal();
+    }
+    else if (e.key === '=' || e.key === 'Enter') {
+        clickEquals();
+    }
+    else if (/[+-/*]/i.test(e.key)) {
+        clickOperator(e.key);
+    }
+});
