@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+.calculator {
+    background-color: rgb(77, 77, 77);
+    height: 90vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+}
+
+.display {
+    font-family: Orbitron, serif;
+    border: solid 3px black;
+    flex: 1 1 0;
+    text-align: end;
+    background-color: black;
+    color: forestgreen;
+    font-size: 8vh;
+    border-radius: 5px;
+}
+
+.row {
+    display: flex;
+    flex: 1 1 0;
+    gap: 5px;
+}
+
+.operations {
+    flex: 2 1 0;
+}
+
+.digits {
+    flex: 8 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.operator {
+    flex: 1;
+    font-size: 5vh;
+}
+
+.digit {
+    flex: 1;
+    background-color: darkgrey;
+    font-size: 5vh;
+}
+
+button {
+    font-family: Orbitron, serif;
+    border-radius: 5px;
+    opacity: 75%;
+}
+
+button:hover {
+    opacity: 100%;
+}
+
+.add, .subtract, .multiply, .divide, .equal {
+    background-color: orange;
+}

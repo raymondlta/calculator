@@ -15,33 +15,33 @@
     <body>
         <div class="calculator">
             <div class="display">0</div>
-            <div class="operations">
-                <button class="clear" onclick="clearDisplay()">AC</button>
-                <button class="add" onclick="clickOperator('+')">+</button>
-                <button class="subtract" onclick="clickOperator('-')">-</button>
-                <button class="multiply" onclick="clickOperator('*')">X</button>
-                <button class="divide" onclick="clickOperator('/')">/</button>
-                <button class="equal" onclick="clickEquals()">=</button>
+            <div class="operations row">
+                <button class="operator" onclick="clearDisplay()">AC</button>
+                <button class="operator add" onclick="clickOperator('+')">+</button>
+                <button class="operator subtract" onclick="clickOperator('-')">-</button>
+                <button class="operator multiply" onclick="clickOperator('*')">X</button>
+                <button class="operator divide" onclick="clickOperator('/')">/</button>
+                <button class="operator equal" onclick="clickEquals()">=</button>
             </div>
             <div class="digits">
-                <div class="digitsRowOne">
-                    <button class="one" onclick="clickDigit(1)">1</button>
-                    <button class="two" onclick="clickDigit(2)">2</button>
-                    <button class="three" onclick="clickDigit(3)">3</button>
+                <div class="row">
+                    <button class="digit" onclick="clickDigit(1)">1</button>
+                    <button class="digit" onclick="clickDigit(2)">2</button>
+                    <button class="digit" onclick="clickDigit(3)">3</button>
                 </div>
-                <div class="digitsRowTwo">
-                    <button class="four" onclick="clickDigit(4)">4</button>
-                    <button class="five" onclick="clickDigit(5)">5</button>
-                    <button class="six" onclick="clickDigit(6)">6</button>
+                <div class="row">
+                    <button class="digit" onclick="clickDigit(4)">4</button>
+                    <button class="digit" onclick="clickDigit(5)">5</button>
+                    <button class="digit" onclick="clickDigit(6)">6</button>
                 </div>
-                <div class="digitsRowThree">
-                    <button class="seven" onclick="clickDigit(7)">7</button>
-                    <button class="eight" onclick="clickDigit(8)">8</button>
-                    <button class="nine" onclick="clickDigit(9)">9</button>
+                <div class="row">
+                    <button class="digit" onclick="clickDigit(7)">7</button>
+                    <button class="digit" onclick="clickDigit(8)">8</button>
+                    <button class="digit" onclick="clickDigit(9)">9</button>
                 </div>
-                <div class="digitsRowFour">
-                    <button class="zero" onclick="clickDigit(0)">0</button>
-                    <button class="decimal" onclick="clickDecimal()">.</button>
+                <div class="row">
+                    <button class="digit" onclick="clickDigit(0)">0</button>
+                    <button class="digit" onclick="clickDecimal()">.</button>
                 </div>
             </div>
         </div>        
